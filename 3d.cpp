@@ -49,20 +49,28 @@ void select(int *a, int l, int r, int K) {
   if (pivotDist > K)
     select(a, l, idx, K);
   else {
-    for(int i = l; i <= idx; i++) cout << a[i] << endl;
-    if (pivotDist < K)
+    if (pivotDist == K)
+      cout << a[idx] << endl;
+    else
       select(a, idx + 1, r, K - pivotDist);
   }
 }
 
 void select(int *a, int n, int K) {
   if (K > n || n <= 0) {
-    cout << "wrong input " << endl;
+    cout << "wrong input" << endl;
     return;
   }
   select(a, 0, n - 1, K);
 }
 int main() {
-  int a[] = {2,1,6,7,4,5,7,8};
-  select(a, 8, 1);
+  int a[] = {130,142,143,153,154,155,166};
+  int n = 7;
+  select(a, n, n/2 + (n%2));
+
+
+  int b[] = {130,142,143,153,154,155,166,177};
+  n = 8;
+  select(b, n, n/2 + (n%2));
+  return 0;
 }

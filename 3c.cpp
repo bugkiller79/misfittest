@@ -48,5 +48,5 @@ int main() {
   tmp = new Node(3); cur->next = tmp; cur = cur->next;
   tmp = new Node(4); cur->next = tmp; cur = cur->next;
   cur->next = second;
-  cout << isloop(head);
+  cout << isloop(head) << endl;
 }

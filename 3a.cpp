@@ -6,7 +6,7 @@ using namespace std;
 void combinations(int id, int *a, int maxNumber) {
   if (id == maxNumber) {
     for(int i = 0; i < maxNumber; i++) cout << a[i] << " ";
-    cout<<endl;
+    cout << endl;
     return;
   }
   for(int j = id; j < maxNumber; j++) {
